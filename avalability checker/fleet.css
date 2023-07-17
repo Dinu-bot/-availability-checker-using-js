@@ -1,0 +1,116 @@
+:root {
+  --colValue: 16vw;
+}
+
+*{
+  margin: 0;
+  /* border-radius: border-box; */
+  box-sizing: border-box;
+}
+
+.top-bar{
+  text-align: center;
+  padding: 20px;
+  
+}
+.top-heading{
+  font-family: "HCo Gotham",Arial,Helvetica,sans-serif;
+}
+
+.sub-para{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px 0px 0px 0px;
+}
+
+.fixed-column{
+   padding: 20px;
+   background: rgb(197, 201, 202);
+   width: 30%;
+   height: 100%;
+}
+.heading{
+  font-family: "HCo Gotham",Arial,Helvetica,sans-serif;
+  padding-bottom :2px;
+  font-weight: bolder;
+}
+.menu{
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left:0px;
+  padding-top :2px;
+}
+
+.scrollable-column{
+  overflow: hidden;
+  background: rgb(32, 230, 220);
+  padding: 20px;
+  width: 100%;
+
+  
+}
+
+/* .cars{
+  display: flex;
+  padding: 10px;
+}
+
+.bike{
+  display: flex;
+  padding: 10px;
+}
+.suv{
+  display: flex;
+  width: 100%;
+  padding: 10px;
+} */
+
+.image-grid {
+  --gap: 16px;
+  --num-cols: 3;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.sidebar-container {
+  background: lightcoral;
+  position: fixed;
+  width: var(--colValue);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 50px 30px 10px 20px;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: var(--colValue) auto;
+}
+
+.content {
+  grid-column-start: 2;
+}
+
+@media screen and (max-width: 1024px){
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}
